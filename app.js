@@ -3,7 +3,7 @@ const sharp = require("sharp");
 const axios = require("axios");
 const app = express();
 
-app.get("/resize", async (req, res) => {
+app.get("/", async (req, res) => {
   const imageUrl = req.query.url;
   const width = parseInt(req.query.width);
   if (!imageUrl || !width) {
