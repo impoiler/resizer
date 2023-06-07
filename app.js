@@ -7,7 +7,7 @@ app.get("/", async (req, res) => {
   const imageUrl = req.query.url;
   const width = parseInt(req.query.width);
   if (!imageUrl || !width) {
-    return res.status(400).send("Missing required query parameters.");
+    return res.status(400).json({status:"failed",message:"missing url and width query"});
   }
 
   try {
