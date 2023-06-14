@@ -72,7 +72,7 @@ app.setErrorHandler(function (error, request, reply) {
 	reply.code(500).send('Internal server error')
 })
 
-app.listen(1311, (err) => {
+app.listen({port: 1311}, (err) => {
 	if (err) {
 		console.error(err)
 		process.exit(1)
