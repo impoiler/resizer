@@ -3,6 +3,9 @@
 	"version": "1.0.0",
 	"main": "app.js",
 	"license": "MIT",
+	"scripts": {
+		"start": "node app.js"
+	},
 	"dependencies": {
 		"@fastify/compress": "^6.4.0",
 		"@fastify/rate-limit": "^8.0.1",
