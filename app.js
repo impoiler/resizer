@@ -1,11 +1,14 @@
 const fastify = require('fastify')
 const sharp = require('sharp')
 const axios = require('axios')
+require('dotenv').config()
 
 const app = fastify()
 
 // Enable gzip compression
 app.register(require('@fastify/compress'))
+
+const PORT = process.env.PORT || 3000;
 
 // Response caching configuration
 const cache = new Map()
@@ -72,10 +75,10 @@ app.setErrorHandler(function (error, request, reply) {
 	reply.code(500).send('Internal server error')
 })
 
-app.listen({port: 1311}, (err) => {
+app.listen({port: PORT}, (err) => {
 	if (err) {
 		console.error(err)
 		process.exit(1)
 	}
-	console.log('Server started on port 1311')
+	console.log('Server started on port ' + PORT)
 })
